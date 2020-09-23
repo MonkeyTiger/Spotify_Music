@@ -174,7 +174,6 @@ const Playlist = ({ mainTrack, tracks, isSearch }) => {
 
 
   const calcMainTrackIndex = (trackID) => {
-    console.log(trackID, selectedSong.id);
     if (trackID === selectedSong.id) {
       setSelectedSong(tracks[0]);
       setIndex(0);

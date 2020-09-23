@@ -42,7 +42,6 @@ export const search = (text, country) => {
         ReactGA.ga('send', 'event', 'event', 'playlist-search', 'no-result');
       }
     }, (error) => {
-      console.log(error);return;
       if (error.response.status === 429) {
         Dispatcher.dispatch({
           type: PLAYLIST_LIMIT_429,

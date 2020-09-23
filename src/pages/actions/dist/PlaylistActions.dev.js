@@ -45,7 +45,6 @@ var search = function search(text, country) {
         _reactGa["default"].ga('send', 'event', 'event', 'playlist-search', 'no-result');
       }
     }, function (error) {
-      console.log(error);
       return;
 
       if (error.response.status === 429) {
