@@ -6,7 +6,6 @@ import {
   PLAYLIST_REMOVE_TRACKS,
   PLAYLIST_CREATED,
   PLAYLIST_SAVING,
-  USER_TOKEN_ERROR,
   PLAYLIST_TRACK_NOT_FOUND,
   PLAYLIST_SAVE_FAIL,
   PLAYLIST_LIMIT_429,
@@ -20,7 +19,7 @@ import ReactGA from 'react-ga';
 export const search = (text, country) => {
   if (!localStorage.magic_token) {
     Dispatcher.dispatch({
-      type: PLAYLIST_LIMIT_429  
+      type: PLAYLIST_LIMIT_429
     });
   } else {
     Dispatcher.dispatch({
