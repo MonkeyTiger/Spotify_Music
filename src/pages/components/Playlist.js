@@ -1,6 +1,5 @@
 import React, { Component, useState, useEffect } from 'react';
 import axios from 'axios';
-import Track from './Track';
 import * as PlaylistActions from '../actions/PlaylistActions';
 import { open } from '../actions/ModalActions';
 import ReactGA from 'react-ga';
@@ -159,7 +158,6 @@ const Playlist = ({ mainTrack, tracks, isSearch }) => {
       }
     });
   }
-
 
   const handleChange = (event) => {
     const cloneEventValue = event.target.value * 1;
@@ -325,7 +323,6 @@ const Playlist = ({ mainTrack, tracks, isSearch }) => {
                 </div>
               </>
             ) : (isSearch && <div className='track-name'>Hey! The track doesn't exist! :(</div>)
-
         }
       </div>
     </div>

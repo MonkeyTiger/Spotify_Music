@@ -55,10 +55,7 @@ class Modal extends Component {
     if (!this._validateForm()) {
       return;
     }
-    if (this.props.token &&
-      this.props.user 
-      // && Number(localStorage.magic_token_expires) > Date.now()
-      ) {
+    if (this.props.token && this.props.user) {
       this._savePlaylist();
     } else {
       login().then(() => {

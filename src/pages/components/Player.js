@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import ReactGA from 'react-ga';
-const ga = ReactGA.ga();
 
 class Track extends Component {
 
@@ -72,17 +71,17 @@ class Track extends Component {
 
   render() {
     return <div>
-              { !this.state.isPlaying && !this.state.isLoading ?
-                <img src='img/volume.svg' alt="" onClick={this._play.bind(this)}/> : null
-              }
-              { this.state.isPlaying && !this.state.isLoading ?
-                <img src='img/pause.svg' alt="" onClick={this._stop.bind(this)}/> : null
-              }
-              { this.state.isLoading ?
-                <img src='img/tail-spin.svg' alt="" className='player-loading'/> : null
-              }
-              <audio ref='audio' src={this.props.source} preload='none'/>
-            </div>;
+      {!this.state.isPlaying && !this.state.isLoading ?
+        <img src='img/volume.svg' alt="" onClick={this._play.bind(this)} /> : null
+      }
+      {this.state.isPlaying && !this.state.isLoading ?
+        <img src='img/pause.svg' alt="" onClick={this._stop.bind(this)} /> : null
+      }
+      {this.state.isLoading ?
+        <img src='img/tail-spin.svg' alt="" className='player-loading' /> : null
+      }
+      <audio ref='audio' src={this.props.source} preload='none' />
+    </div>;
   }
 }
 

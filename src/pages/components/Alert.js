@@ -88,15 +88,6 @@ class Alert extends Component {
             </span>
       <div className='btn-close' onClick={this._handleDone}>Close</div>
       <div className='btn-done' onClick={this._handleLogin}>Login</div>
-      {/* <div className='btn-done' onClick={this._handleLogin}>
-        <SpotifyAuth
-          redirectUri='http://localhost:3000/callback'
-          noLogo={true}
-          clientID='1a70ba777fec4ffd9633c0c418bdcf39'
-          title="Login"
-          scopes={[Scopes.userReadPrivate, 'user-read-email']} // either style will work
-        />
-      </div> */}
     </div>;
   }
 

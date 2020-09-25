@@ -4,13 +4,11 @@ import { CSSTransitionGroup } from 'react-transition-group';
 import SearchBox from './components/SearchBox';
 import Playlist from './components/Playlist';
 import Top from './components/Top';
-import Footer from './components/Footer';
 import Title from './components/Title';
 import Modal from './components/Modal';
 import Loading from './components/Loading';
 import Alert from './components/Alert';
 import Tip from './components/Tip';
-import axios from 'axios';
 
 import SearchStore from './stores/SearchStore';
 import PlaylistStore from './stores/PlaylistStore';
@@ -75,21 +73,12 @@ class App extends Component {
 
   render() {
     return <div className='container'>
-      {/* <CSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={300} transitionName='fade'>
-        {this.state.searching ? this.renderTop() : null}
-      </CSSTransitionGroup> */}
       <CSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={300} transitionName='fade'>
         {this.renderTop()}
       </CSSTransitionGroup>
-      {/* <CSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={300} transitionName='fadeOut'>
-        {!this.state.searching ? this.renderSearch() : null}
-      </CSSTransitionGroup> */}
       <CSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={300} transitionName='fadeOut'>
         {!this.state.searching ? this.renderWelcome() : null}
       </CSSTransitionGroup>
-      {/* <CSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={300} transitionName='fade'>
-        {this.state.searching && !this.state.loading ? this.renderPlaylist() : null}
-      </CSSTransitionGroup> */}
       <CSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={300} transitionName='fade'>
         {this.renderPlaylist()}
       </CSSTransitionGroup>
@@ -102,7 +91,6 @@ class App extends Component {
       <CSSTransitionGroup transitionEnterTimeout={500} transitionLeaveTimeout={300} transitionName='fade' >
         {this.state.alertOpen ? this.renderAlert() : null}
       </CSSTransitionGroup>
-      {/* <Footer tracks={this.state.tracks.length} /> */}
     </div>;
   }
 

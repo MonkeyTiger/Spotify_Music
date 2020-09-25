@@ -3,7 +3,6 @@ import Autosuggest from 'react-autosuggest';
 import { newSearch } from '../actions/SearchActions';
 import { search } from '../actions/PlaylistActions';
 import { PLAYLIST_DEFAULT_SIZE } from '../constants/constants';
-// import Spotify from '../core/Spotify';
 import ReactGA from 'react-ga';
 
 const SearchBox = ({ value, list, country }) => {
@@ -26,18 +25,13 @@ const SearchBox = ({ value, list, country }) => {
     }
   }
 
-  const onChange = (event, {newValue}) => {
+  const onChange = (event, { newValue }) => {
     setSearchVal(newValue);
-    // if (newValue.length > 3) {
-    //   _search({ value: newValue });
-    //   ReactGA.ga('send', 'event', 'key', 'press', 'search-box-enter');
-    // }
   }
 
   const suggestionRenderer = (track) => {
     return <span>{track.name}, {track.artists.first().name}</span>;
   };
-
 
   const getSuggestionValue = (track) => {
     _search({ value: track.name });
@@ -50,7 +44,6 @@ const SearchBox = ({ value, list, country }) => {
 
   const onSuggestionsFetchRequested = (suggestion) => {
     _search({ value: suggestion.value });
-    // ReactGA.ga('send', 'event', 'click', 'suggestion', 'click-suggestion');
   };
 
   const onSuggestionsClearRequested = () => {
@@ -65,7 +58,6 @@ const SearchBox = ({ value, list, country }) => {
     className: 'input-search',
     placeholder: 'What is your favorite song?',
     onChange: onChange,
-    // onKeyDown: TrackSearch
   };
   return <div className='search-box'>
     <div className='search-group'>
